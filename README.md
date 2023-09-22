@@ -1,6 +1,7 @@
 # imgPrep
 
 Scripts to export images for web: thumbs and scrsets for @1.5x @2x @3x @4x pixel density screens.
+
 Requirement: ImageMagic already installed
 ```
 ├── imgDir
