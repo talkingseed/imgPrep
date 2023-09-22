@@ -29,12 +29,12 @@ Structure of image folder for thumbs and webp images
 
 Later to be used in
 
-<?php
-$memes = glob("./memes/thumbs/*");
-usort($memes, function($a, $b) {
-  return filemtime($b) - filemtime($a);
-});
-foreach ($memes as $filename) {
-    echo '<li tabindex="0"><img title="" src="' . $filename . '" /></li>' . "\n";
-}
-?>
+        <?php
+        $memes = glob("./memes/thumbs/*");
+        usort($memes, function($a, $b) {
+          return filemtime($b) - filemtime($a);
+        });
+        foreach ($memes as $filename) {
+            echo '<li tabindex="0"><img title="" src="' . $filename . '" /></li>' . "\n";
+        }
+        ?>
