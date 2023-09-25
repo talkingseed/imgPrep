@@ -17,11 +17,11 @@ Structure of image folder for scaled images
 ```
 
 Later to be used in
-
-        <img alt="box.com"
-          srcset="./employer_logo/box.jpg, ./employer_logo/box@1.5x.jpg 1.5x, ./employer_logo/box@2x.jpg 2x, ./employer_logo/box@3x.jpg 3x, , ./employer_logo/box@4x.jpg 4x"
-          src="/employer_logo/box.jpg">
-
+```html
+<img alt="box.com"
+  srcset="./employer_logo/box.jpg, ./employer_logo/box@1.5x.jpg 1.5x, ./employer_logo/box@2x.jpg 2x, ./employer_logo/box@3x.jpg 3x, , ./employer_logo/box@4x.jpg 4x"
+  src="/employer_logo/box.jpg">
+```
 Structure of image folder for thumbs and webp images
 
 ```
