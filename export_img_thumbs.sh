@@ -14,11 +14,13 @@ if [ -z "$thumbH" ] || [ -z "$imgDir" ]; then
 fi
 
 cd $imgDir
+rm -rf thumbs_old
+rm -rf webp_old
 mv thumbs thumbs_old
 mv webp webp_old
 mkdir thumbs
 mkdir webp
 cd originals/
-mogrify -format webP -quality 50 -path ../webp *
-mogrify -format webP -quality 80 -path ../thumbs -geometry "x${thumbH}" *
+mogrify -format webp -quality 50 -path ../webp *
+mogrify -format webp -quality 80 -path ../thumbs -geometry "x${thumbH}" *
 cd ../..
