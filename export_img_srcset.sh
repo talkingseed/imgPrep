@@ -16,14 +16,16 @@ if [ -z "$smallH" ] || [ -z "$imgDir" ]; then
 fi
 
 cd $imgDir
-rm -rf formated_old
-mv formated formated_old
-mkdir formated
+rm -rf formatted_old
+mv formatted formatted_old
+mkdir formatted
 mkdir sizes
 cd originals
 
+# ImageMagic recommends switch to -colorspace RGB and back to -colorspace sRGB
+# for better color shrinking. Also they recommend to check true colorSpace with ExifTool
 mogrify -format webp -quality 80 -path ../sizes -geometry "x${smallH}" *
-mv ../sizes/* ../formated;
+mv ../sizes/* ../formatted;
 
 thearr=(1.5 2 3 4)
 for i in "${thearr[@]}"; do
@@ -31,9 +33,9 @@ for i in "${thearr[@]}"; do
     echo $imgH
     mogrify -format webp -quality 80 -path ../sizes -geometry "x${imgH}" *
     for file in ../sizes/*; do
-        mv "$file" "${file%.webp}@${i}.x.webp"; 
+        mv "$file" "${file%.webp}@${i}x.webp"; 
     done;
-    mv ../sizes/* ../formated;
+    mv ../sizes/* ../formatted;
 done
 
 cd ..
